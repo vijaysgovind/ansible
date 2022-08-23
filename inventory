@@ -1,5 +1,6 @@
 [servers]
 
-139.162.113.121		ansible_connection=ssh 		ansible_user=root
-172.105.119.133         ansible_connection=ssh          ansible_user=root
-45.79.125.249           ansible_connection=ssh          ansible_user=root
+139.162.113.121	ansible_connection=ssh	ansible_user=root
+172.105.119.133	ansible_connection=ssh	ansible_user=root
+45.79.125.249	ansible_connection=ssh	ansible_user=root
+172.104.127.241	ansible_connection=ssh	ansible_user=root

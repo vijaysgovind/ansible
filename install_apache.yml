@@ -4,20 +4,10 @@
   become: true
   tasks:
 
-  - name: update repository cache and install apache2 and php package in Ubuntu
-    apt:
+  - name: update repository cache and install apache and php 
+    package:
       name: 
-        - apache2
-        - libapache2-mod-php
+        - "{{ apache_package }}"
+        - "{{ php_package }}"
       state: latest
       update_cache: yes
-    when: ansible_distribution == "Ubuntu"
-
-  - name: update repository cache and install httpd and php package in Ubuntu 
-    dnf:
-      name: 
-        - httpd
-        - php 
-      state: latest
-      update_cache: yes
-    when: ansible_distribution == "CentOS"

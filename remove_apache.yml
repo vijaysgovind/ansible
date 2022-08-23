@@ -4,27 +4,18 @@
   become: true
   tasks:
 
-
-  - name: remove apache2 package
+  - name: remove apache2 and php package
     apt:
-      name: apache2
+      name: 
+        - apache2
+        - libapache2-mod-php
       state: absent
     when: ansible_distribution == "Ubuntu"
 
-  - name: remove php support for apache
-    apt:
-      name: libapache2-mod-php
-      state: absent
-    when: ansible_distribution == "Ubuntu"
-
-  - name: remove httpd package
+  - name: remove httpd and php package
     dnf:
-      name: apache2
-      state: absent
-    when: ansible_distribution == "CentOS"
-
-  - name: remove php support for apache
-    dnf:
-      name: php
+      name: 
+        - httpd
+        - php
       state: absent
     when: ansible_distribution == "CentOS"
